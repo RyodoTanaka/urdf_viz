@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<robot name="viz_test" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <link name="world"/>
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://urdf_viz/mesh/visual.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://urdf_viz/mesh/collision.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+
+</robot>

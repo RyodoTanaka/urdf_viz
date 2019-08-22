@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<robot name="tl01">
+
+  <link name="world"/>
+
+  <link name="link0x"/>
+  <joint name="joint0x" type="prismatic">
+    <parent link="world"/>
+    <child link="link0x"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1.0" lower="-5" upper="25" velocity="10"/>
+  </joint>
+
+  <link name="link0y"/>
+  <joint name="joint0y" type="prismatic">
+    <parent link="link0x"/>
+    <child link="link0y"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1.0" lower="-5" upper="10" velocity="10"/>
+  </joint>
+
+  <link name="link0"/>
+  <joint name="joint0" type="fixed">
+    <parent link="link0y"/>
+    <child link="link0"/>
+  </joint>
+  
+  <link name="link1"/>
+  <joint name="joint1" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="link0"/>
+    <child link="link1"/>
+    <limit effort="1.0" lower="-3.14" upper="3.14" velocity="3.14"/>
+  </joint>
+
+  <link name="link2"/>
+  <joint name="joint2" type="fixed">
+    <origin xyz="0 -2.0 0"/>
+    <parent link="link1"/>
+    <child link="link2"/>
+  </joint>
+  
+  <link name="link3"/>
+  <joint name="joint3" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="link0"/>
+    <child link="link3"/>
+    <limit effort="1.0" lower="-3.14" upper="3.14" velocity="3.14"/>
+  </joint>
+
+  <link name="link4"/>
+  <joint name="joint4" type="fixed">
+    <origin xyz="0 -2.0 0"/>
+    <parent link="link3"/>
+    <child link="link4"/>
+  </joint>
+
+  <link name="link5"/>
+   <joint name="joint5" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="link2"/>
+    <child link="link5"/>
+    <limit effort="1.0" lower="-3.14" upper="3.14" velocity="3.14"/>
+  </joint>
+
+  <link name="link6"/>
+  <joint name="joint6" type="fixed">
+    <origin xyz="0 -2.0 0"/>
+    <parent link="link5"/>
+    <child link="link6"/>
+  </joint>
+
+  <link name="link7"/>
+   <joint name="joint7" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="link4"/>
+    <child link="link7"/>
+    <limit effort="1.0" lower="-3.14" upper="3.14" velocity="3.14"/>
+  </joint>
+
+  <link name="link8"/>
+  <joint name="joint8" type="fixed">
+    <origin xyz="0 -2.0 0"/>
+    <parent link="link7"/>
+    <child link="link8"/>
+  </joint>
+
+  
+  
+</robot>
